@@ -1,12 +1,12 @@
 import React from "react";
 
 class TodoForm extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      newItem: ""
-    };
-  }
+  //   constructor() {
+  //     super();
+  //     this.state = {
+  //       newItem: ""
+  //     };
+  //   }
 
   render() {
     return (
@@ -19,7 +19,7 @@ class TodoForm extends React.Component {
           onChange={this.props.handleChange}
         />
         <button>Add Todo</button>
-        <button>Clear Completed </button>
+        <button onClick={this.props.removeItems}>Clear Completed </button>
       </form>
     );
   }

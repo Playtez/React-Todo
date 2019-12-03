@@ -63,6 +63,17 @@ class App extends React.Component {
     this.setState({ todos, todo: "" });
   };
 
+  removeItems = e => {
+    e.preventDefault();
+    this.setState(prevState => {
+      return {
+        todoItems: prevState.todoItems.filter(todo => {
+          return !todo.completed;
+        })
+      };
+    });
+  };
+
   render() {
     console.log("rendering");
     return (
@@ -72,7 +83,7 @@ class App extends React.Component {
           newItem={this.state.newItem}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-          // addItem={}
+          removeItems={this.removeItems}
         />
         <TodoList
           todoItems={this.state.todoItems}
